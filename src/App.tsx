@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Expandable from './components/Expandable';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Expandable>
+        <Expandable.Header>Section one</Expandable.Header>
+
+        <Expandable.Body>
+          Wao wao wao wao wao wao wao wao wao wao wwao, Wao wao wao wao wao wao
+          wao wao wao wao wwao,Wao wao wao wao wao wao wao wao wao wao wwao
+        </Expandable.Body>
+      </Expandable>
+
+      <Expandable>
+        <Expandable.Header>Section two</Expandable.Header>
+
+        <Expandable.Body>
+          <Expandable>
+            <Expandable.Header>Sub Section</Expandable.Header>
+
+            <Expandable.Body>Lorem ifsum dolosit ammet.....</Expandable.Body>
+          </Expandable>
+        </Expandable.Body>
+      </Expandable>
+
+      <Expandable>
+        <Expandable.Header>Section three</Expandable.Header>
+
+        <Expandable.Body>Lorem ifsum dolosit ammet.....</Expandable.Body>
+      </Expandable>
     </div>
   );
 }

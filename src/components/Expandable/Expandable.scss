@@ -1,0 +1,63 @@
+.Expandable {
+  width: 300px;
+  background-color: #e5eaf0;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  &__header {
+    display: flex;
+    justify-items: center;
+    font-family: 'Helvetica Neue', Helvetica, 'SF Pro Display', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #494444;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__header:focus {
+    outline: none;
+    border: none;
+  }
+
+  &__body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    &--expanded {
+      margin-top: 12px;
+      max-height: 9999px;
+      transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+      transition-delay: 0s;
+    }
+  }
+}
+
+.icon {
+  margin-right: 5px;
+  transition: all 0.2s ease-in-out;
+
+  &__rotate {
+    transform: rotate(90deg);
+  }
+}
+
+.fill-current {
+  color: currentColor;
+}
+
+@keyframes height-animation {
+  0% {
+    display: inline;
+  }
+
+  30% {
+    max-height: 66px;
+  }
+
+  100% {
+    max-height: auto;
+  }
+}
